@@ -1,0 +1,53 @@
+<% layout("../layouts/boilerplate.ejs") %>
+
+<div class="add-listing-form edit-listing-form">
+    <h1>Edit your listing</h1>
+    <form method="POST" class="add-listing-form-control needs-validation" action="/listings/<%=listing._id%>?_method=PATCH" novalidate enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title" class="add-listing-form-label">Title</label>
+            <input class="form-control" name="title" id="title" placeholder="add title for listing" value=<%=listing.title%> required>
+            <div class="invalid-feedback">Title should be valid !</div>
+        </div>
+
+        <div class="form-group">
+            <label for="description" class="add-listing-form-label">Description</label>
+            <textarea class="form-control" name="description" id="description" rows="3" > <%=listing.description%></textarea>
+      </div>
+
+        <div class="edit-old-image-div">
+            <label for="old-image">Old Image</label>
+            <img id="old-image" src=<%=listing.image.url%> alt="">
+        </div>
+        <div class="form-group">
+            <label for="image" class="add-listing-form-label">Uplad Image</label>
+            <input type="file" class="form-control" name="image" id="image">
+            <!-- value=<%=listing.image%> -->
+        </div>
+    
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label for="price" class="add-listing-form-label">Price</label>
+                <input class="form-control" name="price" id="price" value="<%=listing.price%>" required>   
+                <div class="invalid-feedback">Price should be valid !</div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="country" class="add-listing-form-label">Country</label>
+                <input class="form-control" name="country" id="country"value=<%=listing.country%> required>    
+                <div class="invalid-feedback">Country should be valid !</div>
+            </div>
+        </div>
+
+    
+        <div class="form-group">
+            <label for="Locatiom" class="add-listing-form-label">Location</label>
+            <input  class="form-control" name="location"  id="Location" value=<%=listing.location%> required>
+            <div class="invalid-feedback">Location should be valid !</div>
+        </div>
+    
+        <div class="form-group add-listing-form-submitbtn">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+
+</div>

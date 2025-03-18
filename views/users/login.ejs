@@ -1,0 +1,19 @@
+<%layout("../layouts/boilerplate.ejs")%>
+
+<div class="add-listing-form">
+    <h1>Login to Wanderlust</h1>
+    <form  action="/login" class="add-listing-form-control needs-validation" method="POST" novalidate>
+        <div class="form-group">
+            <label for="username" class="add-listing-form-label">Username</label>
+            <input class="form-control" name="username" id="username"  required>
+            <div class="valid-feedback">username available </div>
+            <div class="invalid-feedback">username should be non-empty</div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="add-listing-form-label">Password</label>
+            <input  type = "password" class="form-control" name="password" id="password"  required>
+        </div>
+        <div class="form-group add-listing-form-submitbtn">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+</div>

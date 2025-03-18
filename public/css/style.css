@@ -1,0 +1,364 @@
+body {
+    font-family: "Plus Jakarta Sans", serif;
+    height: 100vh;
+}
+
+/* Nav-bar styling */
+.navbar {
+    height: 5rem;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222;
+    font-weight: 400;
+}
+
+.navbar-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-items:hover {
+    transform: scale(1.1);
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+
+/* login signup logout buttons */
+/* From Uiverse.io by ryota1231 */
+.animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    /* background-color: ; */
+    border-radius: 100px;
+    font-weight: 600;
+    color: #1f387e;
+    box-shadow: 0 0 0 2px #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: #1f387e;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+    right: 16px;
+}
+
+.animated-button .arr-2 {
+    left: -25%;
+}
+
+.animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #6098f9;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+    right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+    left: 16px;
+}
+
+.animated-button:hover .text {
+    transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+    fill: #1f387e;
+}
+
+.animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px greenyellow;
+}
+
+.animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+}
+
+.nav-button-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-button-div button, .nav-button-div div{
+    margin-right: 1rem;
+}
+
+
+
+/* fotter styling */
+footer {
+    /* display: flex; */
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(177, 172, 172);
+    position: static;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+}
+
+
+
+.f-info {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: rgb(177, 172, 172);
+}
+
+.f-inner1 {
+    display: flex;
+}
+
+.f-info-socials i {
+    margin-right: 1rem;
+    font-size: 1.7rem;
+}
+
+.f-info-links a {
+    text-decoration: none;
+}
+
+/* cards (listings) styling */
+.row {
+    display: flex;
+    /* justify-content: space-evenly; */
+}
+
+.row a {
+    text-decoration: none;
+}
+
+/* filters */
+.index-display-after-tax{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .remove {
+        display: none;
+    }
+}
+
+
+/* listings styling */
+.card {
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem;
+    width: 100%;
+    /* height: auto; */
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.indv-listing:hover{
+    transform: scale(1.02);
+    transition: 0.2s;
+    opacity: 0.6;
+}
+
+/* index.ejs styling */
+.box {
+    margin: 1rem;
+}
+
+
+
+/* add listing form */
+.add-listing-form {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.add-listing-form-control {
+    width: 50%;
+}
+
+.add-listing-form-submitbtn {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.add-listing-form-label {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+
+/* edit listing form */
+.edit-listing-form{
+    height: 100%;
+}
+
+/* show listing box */
+.show-listing-outer-div {
+    display: flex;
+    justify-content: center;
+    /* width: 80%;/ */
+
+}
+
+.show-listing-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+    max-width: 70%;
+}
+
+.show-listing-image {
+    display: flex;
+    justify-content: center;
+}
+
+.show-listing-image img {
+    width: 100%;
+    max-height: 400px;
+    /* height: 450px; */
+    /* height: auto;/ */
+    aspect-ratio: 16/9;
+    border-radius: 2rem;
+    object-fit: cover;
+}
+
+.show-listing-button {
+    display: flex;
+}
+
+/* .show-listing-button button{ */
+.show-form-btn {
+    margin-top: 2rem;
+    margin-right: 3rem;
+}
+
+
+/* Listing style */
+.review-card {
+    border: 0.1px solid black;
+}
+
+.review-box {
+    /* width: 50%; */
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center;     */
+}
+
+.card-body {
+    margin: 10px;
+}
+
+/* styling for alert */
+.alert-div {
+    display: flex;
+    /* width: 50%; */
+    justify-content: center;
+}
+
+
+/* edit listing */
+.edit-old-image-div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+#old-image{
+    /* margin-top: 1rem; */
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    height: 30%;
+    width: 50%;
+}
+
+
+
+/* Off canvas styling  */
+
+.offcanvas-body{
+    display: flex;
+    margin-left: 0.5rem;    
+}
+
+.offcanvas-body button{
+    margin-top: 1rem;
+}
+
+.error-ejs-message{
+    height: 100vh;
+}
+
+.error-alert{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+}

@@ -1,0 +1,103 @@
+    
+<nav class="navbar navbar-expand-md bg-body border-bottom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><i class="fa-regular fa-compass"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-options" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link nav-items" href="/listings">Explore</a>
+            </div>
+            <div class="nav-button-div">
+                <div>
+                    <a class="nav-link nav-items" href="/listings/new">Airbnb your home</a>
+                </div>
+                <% if (!currUser) { %>
+                    <form action="/signup">
+                        <button class="animated-button" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                </path>
+                            </svg>
+                            <span class="text">SignUp</span>
+                            <span class="circle"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                </path>
+                            </svg>
+                        </button>
+                    </form>
+            
+                    <form action="/login">
+                        <button class="animated-button" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                </path>
+                            </svg>
+                            <span class="text">LogIn</span>
+                            <span class="circle"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                </path>
+                            </svg>
+                        </button>
+                    </form>
+                <% } %>
+            
+                <% if (currUser) { %>
+                    <form action="/logout">
+                        <button class="animated-button" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                </path>
+                            </svg>
+                            <span class="text">LogOut</span>
+                            <span class="circle"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                </path>
+                            </svg>
+                        </button>
+                    </form>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Offcanvas -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Wanderlust</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="navbar-nav">
+            <a class="nav-link nav-items" href="/listings">Explore</a>
+            <a class="nav-link nav-items" href="/listings/new">Airbnb your home</a>
+            <% if (!currUser ) { %>
+                <form action="/signup" class="d-inline">    
+                    <button type="submit" class="btn btn-dark">SignIn</button>
+                </form>
+                <form action="/login" class="d-inline">
+                    <button type="submit" class="btn btn-dark">LogIn</button>
+                </form>
+            <% } %>
+            <% if (currUser ) { %>
+                <form action="/logout" class="d-inline">
+                    <button class="animated-button" type="submit">
+                        <span class="text">LogOut</span>
+                    </button>
+                </form>
+            <% } %>
+        </div>
+    </div>
+</div>

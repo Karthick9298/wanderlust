@@ -1,0 +1,110 @@
+<% layout("../layouts/boilerplate.ejs") %>
+    <div class="show-listing-outer-div">
+        <div class="show-listing-box">
+            <h2>Listing Details </h2>
+            <div>
+                <div class="show-listing-image">
+                    <img src=<%=listing.image.url%> alt="">
+                </div>
+                <div class="show-listing-para">
+                    <p><b>Owned by </b> <i>@<%= listing.owner.username %> </i></p>
+                    <br>
+                    <h4>
+                        <%=listing.title%>
+                    </h4>
+                    <p>
+                        <%= listing.description%>
+                    </p>
+                    <p>&#8377;<%=listing.price%>
+                    </p>
+                    <p>
+                        <%=listing.location%>
+                    </p>
+                    <p>
+                        <%=listing.country%>
+                    </p>
+                </div>
+                <% if(currUser && (currUser._id.equals(listing.owner._id))) {%>
+                    <div class="show-listing-button">
+                        <a href="/listings/edit/<%=listing._id%>"><button
+                                class="btn btn-primary show-form-btn">edit</button></a>
+                        <form method="POST" action="/listings/<%= listing._id%>?_method=DELETE">
+                            <button class="btn btn-secondary show-form-btn">Delete</button>
+                        </form>
+                    </div>
+                    <%}%>
+
+                        <br>
+                        <hr>
+
+                        <% if(currUser){ %>
+                            <div>
+                                <h4>Leave a review</h4><br>
+                                <form action="/listings/<%= listing._id%>/reviews" method="post" novalidate
+                                    class="needs-validation">
+                            
+                                    <div>
+                                        <fieldset class="starability-heartbeat">
+                                            <input type="radio" id="no-rate" class="input-no-rate" name="rating"
+                                                value="1" checked aria-label="No rating." />
+                                            <input type="radio" id="first-rate1" name="rating" value="1" />
+                                            <label for="first-rate1" title="Terrible">1 star</label>
+                                            <input type="radio" id="first-rate2" name="rating" value="2" />
+                                            <label for="first-rate2" title="Not good">2 stars</label>
+                                            <input type="radio" id="first-rate3" name="rating" value="3" />
+                                            <label for="first-rate3" title="Average">3 stars</label>
+                                            <input type="radio" id="first-rate4" name="rating" value="4" />
+                                            <label for="first-rate4" title="Very good">4 stars</label>
+                                            <input type="radio" id="first-rate5" name="rating" value="5" />
+                                            <label for="first-rate5" title="Amazing">5 stars</label>
+                                        </fieldset>
+                                    </div>
+
+                                    <div>
+                                        <label for="comment-text">Comments</label>
+                                        <textarea class="form-control" id="comment-text" rows="3" name="comment"
+                                            required></textarea>
+                                        <div class="invalid-feedback">Please add some comment's for feedback</div>
+                                    </div>
+                                    <div>
+                                        <button type="submit"
+                                            class="btn btn-outline-secondary show-form-btn">Submit</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <%} else {%>
+                                <h5>Login/SignUp to add Review</h5>
+                                <%}%>
+
+
+                                    <br>
+                                    <hr>
+                                    <!-- show reviews -->
+                                    <div class="show-reviews">
+                                        <% if(listing.reviews.length==0) {%>
+                                            <h4>Be the First Review</h4>
+                                            <% }else{ %>
+                                                <div class="review-box">
+                                                    <% for(let review of listing.reviews) {%>
+                                                        <div class="card review-card col-5 ms-5 mb-3">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title"> @<%= review.auther.username%>
+                                                                </h5>
+                                                                <p class="starability-result card-text"
+                                                                    data-rating=<%=review.rating%>></p>
+                                                                <p class="card-text">
+                                                                    <%= review.comment%>
+                                                                </p>
+                                                                <form method="post"
+                                                                    action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE">
+                                                                    <button class="btn btn-dark">delete</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <% }}%>
+                                                </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
