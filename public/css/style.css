@@ -191,12 +191,6 @@ footer {
     margin-bottom: 1rem;
 }
 
-@media (max-width: 768px) {
-    .remove {
-        display: none;
-    }
-}
-
 
 /* listings styling */
 .card {
@@ -261,7 +255,8 @@ footer {
 .show-listing-outer-div {
     display: flex;
     justify-content: center;
-    /* width: 80%;/ */
+    width: 100%;
+    align-items: center;
 
 }
 
@@ -271,7 +266,7 @@ footer {
     justify-content: center;
     align-items: center;
     /* width: 100%; */
-    max-width: 70%;
+    /* max-width: 70%; */
 }
 
 .show-listing-image {
@@ -345,6 +340,7 @@ footer {
 
 .offcanvas-body{
     display: flex;
+    flex-direction: column;
     margin-left: 0.5rem;    
 }
 
@@ -361,4 +357,17 @@ footer {
     align-items: center;
     justify-content: center;
     height: 20%;
+}
+
+
+@media (max-width: 768px) {
+    .remove {
+        display: none;
+    }
+    .show-listing-box{
+        width: 100%;
+    }
+    .add-listing-form-control{
+        width: 70%;
+    }
 }
